@@ -1,0 +1,15 @@
+<div class="create-notes-main">
+    <div class="create-notes-header">
+        <div><label>Create Notes</label></div>
+        <div><span (click)="close()"><i class="fa-regular fa-xmark"></i></span></div>
+    </div>
+    <div class="create-notes-input">
+        <input type="text" [formControl]="name">  
+    </div>
+    <div class="create-notes-button">
+        <button (click)="createNotes()">Create</button>
+        <button (click)="Clear()">Clear</button>  
+    </div>
+</div>
+
+

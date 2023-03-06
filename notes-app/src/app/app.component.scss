@@ -1,0 +1,38 @@
+.app-base {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    
+}
+
+.header {
+    padding: 12px;
+    background-color: #381446;
+    color: white;
+    max-height: 10%;
+}
+
+.main {
+    display: flex;
+    flex-grow: 1;
+    
+}
+
+.contents {
+    width: 85%;
+    position: relative;
+}
+
+.sidebar {
+    background: #2e0530;
+    color: white;
+    width: 15%;
+}
+
+.create-notes {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+  }

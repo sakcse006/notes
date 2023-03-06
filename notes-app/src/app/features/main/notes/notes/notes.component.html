@@ -1,0 +1,106 @@
+<div class="notes-container">
+    <div class="notes-container-header">
+        <div class="notes-container-header-title">
+            <span>{{notesTitle.text}}</span>
+        </div>
+        <!-- <div class="notes-container-header-search">
+            <span>search</span>
+        </div> -->
+        <div class="notes-container-header-count">
+            <span>{{blockListLength}}</span>
+            
+        </div>
+    </div>
+    
+    <div class="notes-container-view">
+       
+        <div class="notes-container-view-block" *ngFor="let item of blockList.slice().reverse(); let i = index;">
+            <div *ngIf="item.visible">
+            <div class="notes-container-view-block-heaadline">
+                
+                <div class="notes-container-view-block-heaadline-icon">
+                    <span><i class="fa-regular fa-messages"></i></span>
+                </div>
+                <div class="notes-container-view-block-heaadline-contain">
+                    <div class="notes-container-view-block-heaadline-contain-time">
+                        <span>{{item.date_time |  date:'medium' }}</span>
+                    </div>
+                    <div class="notes-container-view-block-heaadline-contain-count">
+                        <span>{{ blockListLength - i }}  </span>
+                    </div>
+                </div>
+                <div class="notes-container-view-block-heaadline-option">
+                    <span (click)="deleteNotes(item, i, blockListLength)"><i class="fa fa-trash"></i></span>
+                </div>
+                
+            </div>
+            <div class="notes-container-view-block-message">
+
+                <div class="notes-container-view-block-message-text">
+                    <span>{{item.message}}</span>
+                </div>
+
+                <div class="notes-container-view-block-message-media">
+                    <div class="notes-container-view-block-message-media-list" *ngFor="let media of item.media;">
+                        <div class="notes-container-view-block-message-media-list-image" *ngIf="media.format==='image' && media.url" (click)="downloadFile(media)">
+                            <img src="{{'http://localhost:8000/'+ media.url}}"  style="height: 270px; width:480px">
+                            <span>{{media.name}}</span>
+                        </div>
+                        
+                        <div class="notes-container-view-block-message-media-list-video" *ngIf="media.format==='video' && media.url" (click)="downloadFile(media)">
+                            <video src="{{'http://localhost:8000/'+ media.url}}"  height="270px; width:480px" controls></video>
+                            <span>{{media.name}}</span>
+                        </div>
+
+                        <div class="notes-container-view-block-message-media-list-text" *ngIf="media.format==='text' && media.url" (click)="downloadFile(media)">
+                            <div class="notes-container-view-block-message-media-list-text-logo"></div>
+                            <div class="notes-container-view-block-message-media-list-text-file">
+                                <div class="notes-container-view-block-message-media-list-text-file-title">
+                                    <span>{{media.name}}</span>
+                                </div>
+                                <div class="notes-container-view-block-message-media-list-text-file-format">
+                                    <span>{{media.format}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="notes-container-input">
+        <form [formGroup]="notesForm">
+            <div class="notes-container-input-text">
+                <textarea formControlName="text"></textarea>
+            </div>
+            <div class="notes-container-input-preview">
+                <!-- <div style="background-color: blue;" *ngIf="loader">loading</div> -->
+                <div class="notes-container-input-preview-list" *ngFor="let item of preview;" >
+                    <img [src]=item.url *ngIf="item.format==='image' && item.url" style="height: 30px; width:50px">
+                    <video [src]=item.url *ngIf="item.format==='video' && item.url" height="30px; width:50px"></video>
+                    <div class="notes-container-input-preview-list-text" *ngIf="item.format==='text' && item.url">
+                        <div class="notes-container-input-preview-list-text-logo"></div>
+                        <div class="notes-container-input-preview-list-text-file">
+                            <div class="notes-container-input-preview-list-text-file-title">
+                                <span>{{item.name}}</span>
+                            </div>
+                            <div class="notes-container-input-preview-list-text-file-format">
+                                <span>{{item.format}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notes-container-input-upload">
+                <input #takeInput formControlName="file" type="file" title="" (change)="onFileChange($event)">
+                <button class="notes-container-input-upload-add" (click)="submit()">ADD</button>
+            </div>
+        </form>
+    </div>
+
+</div>

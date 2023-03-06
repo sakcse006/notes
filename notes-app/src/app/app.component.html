@@ -1,0 +1,21 @@
+
+<div class="app-base">
+
+    <div class="header">
+        <app-header ></app-header>
+    </div>
+    
+    <div class="main">
+        <div class="sidebar">
+            <app-sidebar ></app-sidebar>
+        </div>
+        <div class="contents">
+            <app-notes></app-notes>
+        </div>
+    </div>
+
+    <div *ngIf="showCreateNotes" class="create-notes">
+        <app-create-notes></app-create-notes>
+    </div>
+
+</div>

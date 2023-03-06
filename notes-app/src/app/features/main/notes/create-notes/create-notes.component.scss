@@ -1,0 +1,27 @@
+.create-notes-main {
+    border: 1px solid rgb(45, 19, 66);
+    padding: 10px;
+}
+
+.create-notes-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.create-notes-input {
+    padding: 5px;
+
+}
+
+input {
+    border: 1px solid;
+}
+
+.create-notes-button{
+    padding: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 5px;
+
+}

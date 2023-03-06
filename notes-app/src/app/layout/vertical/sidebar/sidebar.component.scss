@@ -1,0 +1,46 @@
+.sidebar-menu {
+    margin-top: 30px;
+}
+
+.create-notes {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 10px;
+
+    &_expand {
+        width: 0px;
+        padding: 0 5px;
+    }
+
+    &_title {
+        flex-grow: 2;
+    }
+}
+
+.notes-list {
+    list-style: none;
+    margin: 0;
+   
+    &-element {
+        padding: 5px 20px;
+
+        &-item {
+            padding-left: 30px;
+        }
+    }
+
+    &-element-active {
+        background-color: #076a99 !important;
+    }
+
+    &-element:hover {
+        background-color: #00040438;
+    }
+
+}
+
+.notes-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

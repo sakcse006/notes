@@ -7,7 +7,7 @@ import { NotesApiService } from 'src/app/support/service/notes-api.service';
 
 
 declare var require: any;
-const FileSaver = require('file-saver');
+// const FileSaver = require('file-saver');
 
 @Component({
   selector: 'app-notes',

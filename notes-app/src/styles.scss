@@ -1,17 +1,3 @@
 /* You can add global styles to this file, and also import other style files */
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    font-size: 14px;
-    font-weight: 500;
-}
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";

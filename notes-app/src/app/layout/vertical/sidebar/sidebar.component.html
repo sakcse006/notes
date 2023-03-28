@@ -1,9 +1,9 @@
 <div class="sidebar-menu">
 
     <div class="create-notes">
-        <div class="create-notes create-notes_expand"><span (click)="subList()"><i class="fa-solid fa-caret-{{iconName}}"></i></span></div>
+        <div class="create-notes create-notes_expand"><span (click)="subList()"><i class="bi bi-caret-{{iconName}}"></i></span></div>
         <div class="create-notes create-notes_title">Create Notes</div>
-        <div class="create-notes create-notes_add"><span (click)="createNotes()"><i class="fa-solid fa-plus"></i></span></div>
+        <div class="create-notes create-notes_add"><span (click)="createNotes()"><i class="bi bi-plus-lg"></i></span></div>
     </div>
 
     <div *ngIf="condition" class="notes-list">

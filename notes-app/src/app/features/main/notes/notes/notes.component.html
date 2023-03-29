@@ -43,12 +43,12 @@
                 <div class="notes-container-view-block-message-media">
                     <div class="notes-container-view-block-message-media-list" *ngFor="let media of item.media;">
                         <div class="notes-container-view-block-message-media-list-image" *ngIf="media.format==='image' && media.url" (click)="downloadFile(media)">
-                            <img src="{{'http://localhost:8000/'+ media.url}}"  style="height: 270px; width:480px">
+                            <img src="{{ baseUrl + media.url}}"  style="height: 270px; width:480px">
                             <span>{{media.name}}</span>
                         </div>
                         
                         <div class="notes-container-view-block-message-media-list-video" *ngIf="media.format==='video' && media.url" (click)="downloadFile(media)">
-                            <video src="{{'http://localhost:8000/'+ media.url}}"  height="270px; width:480px" controls></video>
+                            <video src="{{ baseUrl + media.url}}"  height="270px; width:480px" controls></video>
                             <span>{{media.name}}</span>
                         </div>
 

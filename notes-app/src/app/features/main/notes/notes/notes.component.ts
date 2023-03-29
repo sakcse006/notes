@@ -4,6 +4,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CreateNotesService } from 'src/app/support/service/create-notes.service';
 import { NotesApiService } from 'src/app/support/service/notes-api.service';
+import { environment } from 'src/environments/environment';
 
 
 declare var require: any;
@@ -25,6 +26,7 @@ export class NotesComponent implements OnInit {
   blockList: any = [];
   preview: any = [];
   notesTitle: any;
+  baseUrl: any = environment.baseUrl;
   // blockList: any = [{"visible": true, "time": "Feb 6 12:00 PM", "message": "1111111111", "media": [{"format": "text", "src": "wqerq", "file_name": "name"}]}];
   blockListLength: number;
   notesForm = new FormGroup({
